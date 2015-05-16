@@ -1,0 +1,19 @@
+{
+  "name": "protomorphism",
+  "version": "1.0.0",
+  "description": "Polymorphism via clojure-style protocols.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "polymorphism",
+    "protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/airportyh/protomorphism.git"
+  },
+  "author": "Toby Ho",
+  "license": "MIT"
+}
