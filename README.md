@@ -41,6 +41,9 @@ Pattern.implementation(RegExp, {
   }
 })
 
+// `Pattern.matches` is the polymorphic
+// `matches` function which you can use on
+// any object who implements `Pattern`.
 const matches = Pattern.matches
 const patterns = [
   'README.md',
