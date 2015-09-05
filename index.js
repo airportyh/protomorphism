@@ -7,15 +7,22 @@ class Protocol{
       this[key] = createFun(key).bind(this)
     }
     function createFun(funName){
-      return function(thing){
-        let fun = this.registry.get(thing.constructor)[funName]
-        let retval = fun.apply(this, arguments)
-        return retval
+      return function(thing) {
+        if (this.hasImplementation(thing)) {
+          let fun = this.registry.get(thing.constructor)[funName]
+          let retval = fun.apply(this, arguments)
+          return retval
+        } else {
+          throw new Error("No implementation found for " + thing.constructor.name); 
+        }
       }
     }
   }
   implementation(type, impl){
     this.registry.set(type, impl)
+  }
+  hasImplementation(thing) {
+    return this.registry.has(thing.constructor);
   }
 }
 
